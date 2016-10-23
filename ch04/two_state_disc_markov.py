@@ -1,16 +1,21 @@
-import random as rnd
-X = 'G'    # Initial state
-for i in range(10):
-    print 'Present State = ', X
-    u = rnd.random()
-    if X == 'G':
+from random import random
+
+n = 10
+S = []
+
+S.append('G')   # Initial state
+
+for i in range(n):
+    u = random()
+    if S[i] == 'G':
         if u < 0.5:
-            X = 'G'
+            S.append('G')
         else:
-            X = 'B'
-    elif X == 'B':
+            S.append('B')
+    elif S[i] == 'B':
         if u < 0.7:
-            X = 'G'
+            S.append('G')
         else:
-            X = 'B'
-    print 'Next State = ', X
+            S.append('B')
+
+print('Sample Path: ', S)
