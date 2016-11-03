@@ -3,6 +3,7 @@
 # It is available in the github repository
 
 from simLib import mm1
+from random import seed
 from statistics import mean
 
 lamda = 1.3
@@ -13,6 +14,7 @@ Num_Repl = 50   # Number of replications (repetitions)
 Delay = []      # Data set
 
 for i in range(Num_Repl):
+    seed()  # Reseed RNG
     d = mm1(lamda, mu, n)
     Delay.append(d)
     
